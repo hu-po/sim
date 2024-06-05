@@ -1,0 +1,3 @@
+FROM nvcr.io/nvidia/isaac-sim:4.0.0
+
+RUN python sim/humanoid_gym/play.py --task legs_ppo --sim_device cpu
