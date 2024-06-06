@@ -3,6 +3,8 @@ WORKDIR /src
 COPY sim /src/sim
 COPY pyproject.toml /src/
 COPY setup.cfg /src/
+COPY setup.py /src/
 RUN pip install --upgrade pip
 RUN pip install .
-RUN python sim/humanoid_gym/play.py --task legs_ppo --sim_device cpu
+COPY sim/requirements.txt /src/sim/
+RUN pip install -r sim/requirements.txt
